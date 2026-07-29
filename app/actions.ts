@@ -3,42 +3,49 @@
 import fs from 'fs';
 import path from 'path';
 import { revalidatePath } from 'next/cache';
+import { Clase } from '@/lib/types';
+import { obtenerTodasLasClases } from '@/lib/clases-data';
 
-export async function crearClaseJson(formData: FormData) {
-  // 1. Recoger los datos del formulario
-  const nombre = formData.get('nombre') as string;
-  const descripcion = formData.get('descripcion') as string;
-  const habilidadesString = formData.get('habilidades') as string;
+// 1. Enviar las clases al cliente
+export async function obtenerClasesParaAdmin() {
+  return obtenerTodasLasClases();
+}
 
-  // 2. Dar formato a las habilidades (separadas por comas)
-  const habilidades = habilidadesString.split(',').map(hab => ({
-    nombre: hab.trim(),
-    descripcion: "Descripción pendiente" // Podrás editar esto más adelante
-  }));
-
-  // 3. Crear el objeto de la clase y su ID (en minúsculas y sin espacios)
-  const id = nombre.toLowerCase().trim().replace(/\s+/g, '-');
-  const nuevaClase = {
-    id,
-    nombre,
-    descripcion,
-    habilidades
-  };
-
-  // 4. Definir la ruta donde se guardará (carpeta "data/clases")
-  const dataDirectory = path.join(process.cwd(), 'data/clases');
+// 2. Guardar o Editar Clase
+export async function guardarClaseCompleta(claseDataString: string, idOriginal?: string) {
+  const claseData = JSON.parse(claseDataString) as Clase;
   
-  // Si la carpeta no existe, la creamos automáticamente
+  // Generamos el nuevo ID por si le han cambiado el nombre
+  const nuevoId = claseData.nombre.toLowerCase().trim().replace(/\s+/g, '-');
+  claseData.id = nuevoId;
+
+  const dataDirectory = path.join(process.cwd(), 'data/clases');
   if (!fs.existsSync(dataDirectory)) {
     fs.mkdirSync(dataDirectory, { recursive: true });
   }
 
-  const filePath = path.join(dataDirectory, `${id}.json`);
+  // Si estamos editando y el ID (nombre) ha cambiado, borramos el archivo viejo
+  if (idOriginal && idOriginal !== nuevoId) {
+    const oldFilePath = path.join(dataDirectory, `${idOriginal}.json`);
+    if (fs.existsSync(oldFilePath)) {
+      fs.unlinkSync(oldFilePath);
+    }
+  }
 
-  // 5. Escribir el archivo físicamente en el disco duro
-  fs.writeFileSync(filePath, JSON.stringify(nuevaClase, null, 2), 'utf8');
+  // Guardamos el archivo (si el ID es el mismo, simplemente lo sobreescribe)
+  const filePath = path.join(dataDirectory, `${nuevoId}.json`);
+  fs.writeFileSync(filePath, JSON.stringify(claseData, null, 2), 'utf8');
 
-  // 6. Refrescar la caché de Next.js para que la nueva clase aparezca al instante
+  revalidatePath('/');
+  revalidatePath('/admin');
+}
+
+// 3. Borrar Clase
+export async function borrarClaseAccion(id: string) {
+  const filePath = path.join(process.cwd(), 'data/clases', `${id}.json`);
+  if (fs.existsSync(filePath)) {
+    fs.unlinkSync(filePath);
+  }
   revalidatePath('/');
   revalidatePath('/admin');
 }
