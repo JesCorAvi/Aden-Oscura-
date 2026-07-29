@@ -35,7 +35,7 @@ El flujo de trabajo correcto para añadir contenido se basa en usar el entorno l
    git clone [https://github.com/tu-usuario/aden-oscura.git](https://github.com/tu-usuario/aden-oscura.git)
    cd aden-oscura
 
-```
+   ```
 
 2. **Instalar dependencias:**
 Asegúrate de realizar una instalación limpia utilizando `pnpm` para evitar conflictos de *lockfiles*.
@@ -43,6 +43,7 @@ Asegúrate de realizar una instalación limpia utilizando `pnpm` para evitar con
 pnpm install
 
 ```
+
 
 
 3. **Iniciar el servidor de desarrollo:**
