@@ -1,0 +1,76 @@
+{
+  "id": "soulbreaker",
+  "nombre": "Soulbreaker",
+  "emoji": "💀",
+  "color": "#6c3483",
+  "colorDark": "#9b59b6",
+  "equipo": "Armaduras ligeras. Puede utilizar cualquier arma.",
+  "descripcion": "Maestro de la oscuridad que roba fragmentos del alma de sus enemigos para desatar devastadores ataques oscuros.",
+  "habilidades": [
+    {
+      "nombre": "Soul Mastery",
+      "tipo": "pasiva",
+      "descripcion": "Requiere Estoque. Cada vez que inflige daño roba fragmentos del alma del enemigo.",
+      "requiere": "Estoque",
+      "efecto": [
+        "Obtiene 2 almas por ataque.",
+        "Máximo: 20 almas."
+      ]
+    },
+    {
+      "nombre": "Death Mark",
+      "tipo": "habilidad",
+      "porcentaje": "20% y POD",
+      "descripcion": "Marca al enemigo con oscuridad.",
+      "efecto": [
+        "Reduce 1 punto de vida y 1 punto de magia por turno."
+      ],
+      "coste": "1 alma",
+      "alcance": "50 metros",
+      "duracion": "Tu bono de magia"
+    },
+    {
+      "nombre": "Soul of Pain",
+      "tipo": "habilidad",
+      "porcentaje": "25%",
+      "descripcion": "Libera un alma para atacar al objetivo.",
+      "efecto": [
+        "Daño: 2D6 de oscuridad.",
+        "El objetivo pierde su siguiente acción."
+      ],
+      "coste": "3 almas",
+      "alcance": "50 metros"
+    },
+    {
+      "nombre": "Surrender to the Unholy",
+      "tipo": "habilidad",
+      "porcentaje": "15% y POD",
+      "descripcion": "Reduce la resistencia del enemigo a la oscuridad y aumenta su resistencia a la magia sagrada.",
+      "coste": "2 almas",
+      "alcance": "50 metros",
+      "duracion": "Tu bono de magia"
+    },
+    {
+      "nombre": "Triple Thrust",
+      "tipo": "habilidad",
+      "porcentaje": "15% y POD",
+      "descripcion": "Ejecuta tres estocadas consecutivas.",
+      "efecto": [
+        "Daño: 2D8 de oscuridad."
+      ],
+      "coste": "1 alma"
+    }
+  ],
+  "pasivas": [
+    {
+      "nombre": "Inmunidad Mágica",
+      "tipo": "pasiva",
+      "descripcion": "Obtiene 1 dado de bonificación para resistir ataques mágicos."
+    },
+    {
+      "nombre": "Maestría con Armadura Ligera",
+      "tipo": "pasiva",
+      "descripcion": "Reduce el daño recibido en 1 punto."
+    }
+  ]
+}

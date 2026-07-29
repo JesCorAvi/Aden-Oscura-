@@ -1,0 +1,95 @@
+{
+  "id": "paladin",
+  "nombre": "Paladín",
+  "emoji": "🛡️",
+  "color": "#d4a017",
+  "colorDark": "#f1c40f",
+  "equipo": "Armaduras ligeras y pesadas. Puede utilizar cualquier arma.",
+  "descripcion": "Guerrero sagrado especializado en provocar a los enemigos, resistir daño y apoyar al grupo con bendiciones.",
+  "habilidades": [
+    {
+      "nombre": "Aggression",
+      "tipo": "habilidad",
+      "porcentaje": "25% y POD",
+      "descripcion": "Provoca a un enemigo para obligarlo a atacarte.",
+      "coste": "1 magia",
+      "duracion": "5 turnos"
+    },
+    {
+      "nombre": "Aura of Hate",
+      "tipo": "habilidad",
+      "porcentaje": "20% y POD",
+      "descripcion": "Provoca a todos los enemigos cercanos para que te ataquen.",
+      "coste": "2 magia",
+      "alcance": "20 metros",
+      "duracion": "5 turnos"
+    },
+    {
+      "nombre": "Holy Blessing",
+      "tipo": "habilidad",
+      "porcentaje": "20%",
+      "descripcion": "Restaura vida a un objetivo.",
+      "efecto": [
+        "Cura: 2D6 HP."
+      ],
+      "coste": "10 magia"
+    },
+    {
+      "nombre": "Remedy",
+      "tipo": "habilidad",
+      "porcentaje": "Acción",
+      "descripcion": "Detiene el sangrado del usuario.",
+      "coste": "1 magia"
+    },
+    {
+      "nombre": "Majesty",
+      "tipo": "habilidad",
+      "porcentaje": "Acción",
+      "descripcion": "Incrementa la defensa a cambio de reducir la capacidad de esquiva.",
+      "efecto": [
+        "Aumenta la defensa en X puntos.",
+        "Todas las tiradas de esquiva se realizan con un grado de desventaja."
+      ],
+      "coste": "1 magia",
+      "duracion": "3 turnos"
+    },
+    {
+      "nombre": "Shield Stun",
+      "tipo": "habilidad",
+      "porcentaje": "15%",
+      "descripcion": "Golpea con el escudo dejando al objetivo aturdido.",
+      "requiere": "Escudo",
+      "efecto": [
+        "El objetivo no puede realizar acciones durante 1 turno.",
+        "Solo puede utilizarse una vez por combate."
+      ]
+    }
+  ],
+  "pasivas": [
+    {
+      "nombre": "Maestría con Armadura Pesada",
+      "tipo": "pasiva",
+      "descripcion": "Mientras lleve armadura pesada equipada, reduce el daño recibido en 1 punto."
+    },
+    {
+      "nombre": "Maestría con Escudos",
+      "tipo": "pasiva",
+      "descripcion": "Mientras lleve un escudo equipado, reduce el daño recibido en 1 punto."
+    },
+    {
+      "nombre": "Armadura Sagrada",
+      "tipo": "pasiva",
+      "descripcion": "Obtiene 1 dado de bonificación para resistir ataques de magia oscura."
+    },
+    {
+      "nombre": "Maestría con Armas Contundentes y Espadas Cortas",
+      "tipo": "pasiva",
+      "descripcion": "Inflige +2 de daño con armas contundentes y espadas cortas."
+    },
+    {
+      "nombre": "Resistencia Mágica",
+      "tipo": "pasiva",
+      "descripcion": "Obtiene 1 dado de bonificación para resistir ataques mágicos."
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "gladiador",
+  "nombre": "Gladiador",
+  "emoji": "⚔️",
+  "color": "#c0392b",
+  "colorDark": "#e74c3c",
+  "equipo": "Armaduras ligeras y pesadas. Puede utilizar cualquier arma.",
+  "descripcion": "Guerrero de doble espada que acumula energía sónica para desatar poderosos ataques de área y a distancia.",
+  "habilidades": [
+    {
+      "nombre": "Sonic Focus",
+      "tipo": "pasiva",
+      "descripcion": "Requiere dos espadas. Carga la energía necesaria para utilizar habilidades de tipo Sonic.",
+      "requiere": "Dos espadas",
+      "efecto": [
+        "Recupera 1 carga por turno.",
+        "Recupera 2 cargas si no realiza ninguna acción durante el turno.",
+        "Consume 1 punto de magia al activarse.",
+        "Máximo de cargas: 8."
+      ]
+    },
+    {
+      "nombre": "Corte Doble",
+      "tipo": "habilidad",
+      "porcentaje": "25%",
+      "descripcion": "Realiza dos rápidos cortes con ambas espadas.",
+      "requiere": "Dos espadas",
+      "efecto": [
+        "Daño: 2D6."
+      ]
+    },
+    {
+      "nombre": "Corte Triple",
+      "tipo": "habilidad",
+      "porcentaje": "15%",
+      "descripcion": "Ejecuta tres cortes consecutivos.",
+      "requiere": "Dos espadas",
+      "efecto": [
+        "Daño: 3D6.",
+        "Ignora la defensa proporcionada por escudos, pero no la armadura."
+      ],
+      "coste": "3 cargas"
+    },
+    {
+      "nombre": "Onda Sónica",
+      "tipo": "habilidad",
+      "porcentaje": "25%",
+      "descripcion": "Lanza una ráfaga de energía sónica contra un objetivo distante.",
+      "requiere": "Dos espadas",
+      "efecto": [
+        "Daño: 2D6."
+      ],
+      "coste": "4 cargas",
+      "alcance": "10 metros"
+    },
+    {
+      "nombre": "Barrido Sónico",
+      "tipo": "habilidad",
+      "porcentaje": "20%",
+      "descripcion": "Genera una onda de energía sónica que daña a todos los enemigos situados frente al usuario.",
+      "requiere": "Dos espadas",
+      "efecto": [
+        "Daño: 1D6."
+      ],
+      "coste": "2 cargas",
+      "alcance": "Cono de 5 metros"
+    },
+    {
+      "nombre": "Espíritu de Duelista",
+      "tipo": "habilidad",
+      "porcentaje": "Acción",
+      "descripcion": "Obtiene +1 dado de bonificación en todas las habilidades de ataque realizadas con dos espadas.",
+      "efecto": [
+        "Consume 10 puntos de magia.",
+        "Duración: 5 turnos."
+      ],
+      "coste": "10 magia",
+      "duracion": "5 turnos"
+    },
+    {
+      "nombre": "Warcry",
+      "tipo": "habilidad",
+      "porcentaje": "Acción",
+      "descripcion": "Incrementa el ataque físico en 2 puntos por cada golpe acertado.",
+      "efecto": [
+        "Duración: 10 turnos.",
+        "Reutilización: Descanso corto."
+      ],
+      "duracion": "10 turnos",
+      "reutilizacion": "Descanso corto"
+    },
+    {
+      "nombre": "Battle Roar",
+      "tipo": "habilidad",
+      "porcentaje": "Acción",
+      "descripcion": "Aumenta temporalmente el HP máximo en un 50% y recupera inmediatamente esa misma cantidad de vida.",
+      "coste": "12 magia",
+      "duracion": "10 turnos",
+      "reutilizacion": "Descanso corto"
+    }
+  ],
+  "pasivas": [],
+  "activables": [
+    {
+      "nombre": "Detectar Debilidad: Animal",
+      "tipo": "activable",
+      "descripcion": "Obtiene +2 al daño contra animales.",
+      "efecto": [
+        "+2 daño contra animales."
+      ]
+    },
+    {
+      "nombre": "Detectar Debilidad: Botánica",
+      "tipo": "activable",
+      "descripcion": "Obtiene +2 al daño contra plantas.",
+      "efecto": [
+        "+2 daño contra plantas."
+      ]
+    },
+    {
+      "nombre": "Detectar Debilidad: Dragones",
+      "tipo": "activable",
+      "descripcion": "Obtiene +2 al daño contra dragones.",
+      "efecto": [
+        "+2 daño contra dragones."
+      ]
+    },
+    {
+      "nombre": "Vicious Stance",
+      "tipo": "activable",
+      "descripcion": "La habilidad Empalar inflige 1 dado adicional de daño.",
+      "efecto": [
+        "La habilidad Empalar inflige 1 dado adicional de daño."
+      ],
+      "coste": "1 magia por turno"
+    }
+  ]
+}

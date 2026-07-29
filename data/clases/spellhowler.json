@@ -1,0 +1,131 @@
+{
+  "id": "spellhowler",
+  "nombre": "Spellhowler",
+  "emoji": "🌀",
+  "color": "#1a5276",
+  "colorDark": "#2980b9",
+  "equipo": "Túnicas o armaduras de tipo túnica y un bastón o espada mágica.",
+  "descripcion": "Mago oscuro de largo alcance que combina hechizos de viento, fuego, oscuridad y maldiciones devastadoras.",
+  "habilidades": [
+    {
+      "nombre": "Body to Mind",
+      "tipo": "automatica",
+      "descripcion": "Sacrifica 1 punto de vida para recuperar 1 punto de magia."
+    },
+    {
+      "nombre": "Corpse Life Drain",
+      "tipo": "automatica",
+      "descripcion": "Absorbe energía de un cadáver reciente.",
+      "efecto": [
+        "Recupera 1D3 HP.",
+        "El cadáver debe llevar muerto menos de 30 minutos."
+      ],
+      "coste": "1 magia"
+    },
+    {
+      "nombre": "Curse Fear",
+      "tipo": "habilidad",
+      "porcentaje": "15% y POD",
+      "descripcion": "El objetivo entra en pánico y huye.",
+      "coste": "5 magia",
+      "alcance": "25 metros",
+      "duracion": "Tu bono de magia"
+    },
+    {
+      "nombre": "Hurricane",
+      "tipo": "habilidad",
+      "porcentaje": "30%",
+      "descripcion": "Lanza un huracán de viento.",
+      "efecto": [
+        "Daño: 2D8 + la mitad del bono mágico.",
+        "Elemento: Viento."
+      ],
+      "coste": "4 magia",
+      "alcance": "50 metros"
+    },
+    {
+      "nombre": "Shadow Flare",
+      "tipo": "habilidad",
+      "porcentaje": "20%",
+      "descripcion": "Dispara una mezcla de fuego y oscuridad.",
+      "efecto": [
+        "Daño: 4D6.",
+        "Provoca Quemadura."
+      ],
+      "coste": "5 magia",
+      "alcance": "50 metros"
+    },
+    {
+      "nombre": "Vampiric Claw",
+      "tipo": "habilidad",
+      "porcentaje": "20%",
+      "descripcion": "Una garra oscura desgarra al enemigo absorbiendo su energía.",
+      "efecto": [
+        "Daño: 3D3."
+      ],
+      "coste": "5 magia",
+      "alcance": "50 metros"
+    },
+    {
+      "nombre": "Curse Chaos",
+      "tipo": "habilidad",
+      "porcentaje": "10% y POD",
+      "descripcion": "Confunde al enemigo.",
+      "efecto": [
+        "El objetivo realiza todos sus ataques con 1 dado de penalización."
+      ],
+      "coste": "5 magia",
+      "alcance": "25 metros",
+      "duracion": "Tu bono de magia"
+    },
+    {
+      "nombre": "Silence",
+      "tipo": "habilidad",
+      "porcentaje": "10% y POD",
+      "descripcion": "Impide al objetivo hablar y lanzar magia.",
+      "coste": "6 magia",
+      "alcance": "25 metros",
+      "duracion": "Tu bono de magia"
+    },
+    {
+      "nombre": "Sleep",
+      "tipo": "habilidad",
+      "porcentaje": "10% y POD",
+      "descripcion": "Induce un sueño profundo.",
+      "efecto": [
+        "El objetivo realiza cualquier acción con desventaja hasta recibir al menos 1 punto de daño."
+      ],
+      "coste": "10 magia",
+      "alcance": "25 metros",
+      "duracion": "La mitad de tu bono de magia"
+    },
+    {
+      "nombre": "Surrender to Poison",
+      "tipo": "habilidad",
+      "descripcion": "Reduce la resistencia del enemigo al veneno.",
+      "coste": "2 magia",
+      "alcance": "50 metros",
+      "duracion": "Tu bono de magia"
+    },
+    {
+      "nombre": "Surrender to Wind",
+      "tipo": "habilidad",
+      "descripcion": "Reduce la resistencia al viento y aumenta la resistencia a la tierra.",
+      "coste": "2 magia",
+      "alcance": "50 metros",
+      "duracion": "Tu bono de magia"
+    }
+  ],
+  "pasivas": [
+    {
+      "nombre": "Inmunidad Mágica",
+      "tipo": "pasiva",
+      "descripcion": "Obtiene 1 dado de bonificación para resistir ataques mágicos."
+    },
+    {
+      "nombre": "Maestría con Túnicas",
+      "tipo": "pasiva",
+      "descripcion": "Reduce el daño recibido en 1 punto."
+    }
+  ]
+}
