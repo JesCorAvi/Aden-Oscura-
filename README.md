@@ -1,33 +1,41 @@
-# Aden-Oscura-
+# 🛡️ Aden Oscura - Gestor de Clases Estático
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+Este proyecto es una aplicación web estática construida con **Next.js** y **React**. Está diseñada para gestionar y visualizar clases de un sistema RPG (juego de rol), sus habilidades, pasivas y activables, de forma totalmente estática y sin necesidad de bases de datos externas.
 
-## Built with v0
+---
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+## ✨ Características Principales
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_HPYlmHE1eBK4d1knJ9MDLDqRg6Sr)
+*   **CMS Local sin Base de Datos:** Utiliza el sistema de archivos del sistema operativo (`fs` de Node.js) para guardar la información directamente en archivos `.json`.
+*   **Panel de Administración Avanzado:** Incluye una interfaz tipo "Data Studio" en la ruta `/admin` que permite crear, editar y eliminar clases de forma visual.
+*   **Constructor de Habilidades:** Un editor interno para añadir mecánicas específicas a cada clase, categorizadas en: Habilidades Activas, Pasivas, Activables, Automáticas y Toggle.
+*   **Selector de Emojis Nativo:** Integración con `emoji-picker-react` para seleccionar visualmente los iconos representativos de cada clase.
+*   **Rendimiento Extremo (Static Generation):** Al no depender de llamadas a bases de datos en la nube, Next.js compila el contenido de los `.json` de forma estática, haciendo que los tiempos de carga sean instantáneos en producción.
 
-## Getting Started
+---
 
-First, run the development server:
+## 🏗️ Arquitectura "Content as Code" (Flujo de Trabajo)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Dado que el proyecto se despliega en **Vercel** (cuya arquitectura *Serverless* tiene un sistema de archivos de solo lectura por seguridad), el panel de administración **no guarda datos en producción**. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El flujo de trabajo correcto para añadir contenido es el siguiente:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Desarrollo Local:** Un miembro del equipo descarga el repositorio y ejecuta la aplicación en local (`pnpm dev`).
+2. **Creación:** Accede a `http://localhost:3000/admin` y utiliza la interfaz para generar el contenido. Al guardar, el sistema crea o modifica físicamente los archivos en la carpeta `data/clases/` de su ordenador.
+3. **Control de Versiones:** El desarrollador hace un `git commit` de los nuevos archivos `.json` generados y los sube a GitHub (`git push`).
+4. **Despliegue Automático:** Vercel detecta los cambios en el repositorio, reconstruye la página web leyendo los nuevos JSON y publica el contenido actualizado al instante para todos los usuarios.
 
-## Learn More
+---
 
-To learn more, take a look at the following resources:
+## 🚀 Instalación y Uso Local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+### Requisitos Previos
+*   Node.js instalado.
+*   El gestor de paquetes `pnpm` activado.
+
+### Pasos
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/aden-oscura.git](https://github.com/tu-usuario/aden-oscura.git)
+   cd aden-oscura
