@@ -389,6 +389,7 @@ export default function AdminPage() {
                 </div>
                 
                 <div className="p-6 pt-2">
+                    
                   {renderListaSkills(clase.habilidades, "habilidades", "text-blue-400 border border-blue-500/30 bg-blue-500/10")}
                   {renderListaSkills(clase.pasivas, "pasivas", "text-emerald-400 border border-emerald-500/30 bg-emerald-500/10")}
                   {renderListaSkills(clase.activables, "activables", "text-amber-400 border border-amber-500/30 bg-amber-500/10")}
@@ -407,6 +408,7 @@ export default function AdminPage() {
                 </div>
               </section>
               
+
             </div>
           </div>
         </main>
