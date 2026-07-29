@@ -155,6 +155,3 @@ Toda la información generada desde el panel de administración se guarda en for
 * **Estilos:** Tailwind CSS
 * **Librerías Extra:** `emoji-picker-react` (Selector visual)
 
-```
-
-```
