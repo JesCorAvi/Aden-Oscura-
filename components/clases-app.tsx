@@ -1,13 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { CLASES } from "@/lib/clases-data"
+import { Clase } from '@/lib/types';
 import { ClaseSelector } from "./clase-selector"
 import { ClaseDetalle } from "./clase-detalle"
 
-export function ClasesApp() {
-  const [selectedId, setSelectedId] = useState<string>(CLASES[0].id)
-  const selectedClase = CLASES.find((c) => c.id === selectedId) ?? CLASES[0]
+export function ClasesApp({ clases }: { clases: Clase[] }) {
+  const [selectedId, setSelectedId] = useState<string>(clases[0].id)
+  const selectedClase = clases.find((c) => c.id === selectedId) ?? clases[0]
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -25,7 +25,7 @@ export function ClasesApp() {
               <span className="text-lg">🎲</span>
             </div>
           </div>
-          <ClaseSelector clases={CLASES} selected={selectedId} onSelect={setSelectedId} />
+          <ClaseSelector clases={clases} selected={selectedId} onSelect={setSelectedId} />
         </div>
       </header>
 
